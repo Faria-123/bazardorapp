@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Marqeue from "@/components/Marqeue";
+import { Suspense } from "react";
+import Footer from "@/components/Footer";
 
 const HindSiliguri = Hind_Siliguri({
 
@@ -25,11 +27,16 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         <Header></Header>
-        <Navbar></Navbar>
-        <Marqeue></Marqeue>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Navbar />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Marqeue />
+        </Suspense>
         <main>
           {children}
         </main>
+        <Footer></Footer>
 
       </body>
     </html>

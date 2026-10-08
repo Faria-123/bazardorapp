@@ -1,9 +1,20 @@
+"use client";
 import Image from "next/image";
-
+import { useEffect, useState } from "react";
 const Banner = () => {
-    const date = new Date().toLocaleString("bn-BD", {
-        dateStyle: 'full'
-    })
+    // const date = new Date().toLocaleString("bn-BD", {
+    //     dateStyle: 'full'
+    // })
+
+    const [date, setDate] = useState("");
+
+    useEffect(() => {
+        setDate(
+            new Date().toLocaleDateString("bn-BD", {
+                dateStyle: "full",
+            })
+        );
+    }, []);
     return (
         <section className="px-4 py-6 bg-gray-100">
             <div className="card mx-auto max-w-6xl overflow-hidden rounded-2xl border border-base-200 bg-base-100 shadow-sm">
