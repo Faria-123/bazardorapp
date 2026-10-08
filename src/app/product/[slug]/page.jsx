@@ -1,14 +1,10 @@
-// import products from "@/data/products";
-// import { connection } from "next/server";
 
-import { Suspense } from "react";
-
+import { getProductBySlug } from "@/lib/products";
 const ProductDetails = async ({ params }) => {
     // await connection();
 
     const { slug } = await params;
-    const res = await fetch("https://api.abcz.workers.dev/api/bazardor/products");
-    const products = await res.json();
+    const products = await getProductBySlug();
     const product = products.find((item) => item.slug === slug);
 
     if (!product) {

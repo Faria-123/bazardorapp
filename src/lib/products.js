@@ -11,3 +11,14 @@ export async function getProductsByCategory(category) {
 
     return res.json();
 }
+export async function getProductBySlug() {
+    const res = await fetch(
+        `https://api.abcz.workers.dev/api/bazardor/products`
+    );
+
+    if (!res.ok) {
+        throw new Error("Failed to fetch product");
+    }
+
+    return res.json();
+}
