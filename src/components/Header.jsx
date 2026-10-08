@@ -135,13 +135,18 @@ const Header = () => {
                 </Link>
 
                 <div className="flex justify-center items-center gap-4 mt-4">
-                    <button className="bg-green-600 text-white px-4 py-2 rounded-md">
-                        সাইন ইন
-                    </button>
 
-                    <button className="bg-green-300 text-white px-4 py-2 rounded-md">
-                        সাইন আপ
-                    </button>
+                    <Link href="/signin">
+                        <button className="bg-green-600 text-white px-4 py-2 rounded-md">
+                            সাইন ইন
+                        </button>
+                    </Link>
+
+                    <Link href="/signup">
+                        <button className="bg-green-300 text-white px-4 py-2 rounded-md">
+                            সাইন আপ
+                        </button>
+                    </Link>
                 </div>
 
             </div>

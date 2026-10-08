@@ -1,9 +1,13 @@
 
 import { getProductBySlug } from "@/lib/products";
+// import { Suspense } from "react";
+export const instant = false;
+
 const ProductDetails = async ({ params }) => {
     // await connection();
 
     const { slug } = await params;
+
     const products = await getProductBySlug();
     const product = products.find((item) => item.slug === slug);
 
