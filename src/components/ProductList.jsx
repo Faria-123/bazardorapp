@@ -16,9 +16,7 @@ const ProductList = ({ products }) => {
             return b.today - a.today;
         }
 
-        if (sort === "name") {
-            return a.nameBn.localeCompare(b.nameBn);
-        }
+
 
         return 0;
     });
@@ -50,9 +48,7 @@ const ProductList = ({ products }) => {
                             বেশি দাম
                         </option>
 
-                        <option value="name">
-                            নাম
-                        </option>
+
                     </select>
 
                 </div>

@@ -10,11 +10,15 @@ const page = () => {
         const data = await signIn.social({
             provider: "google",
         });
+        toast.success("Sign In Successfull with google");
+
     };
     const handleGit = async () => {
         const data = await signIn.social({
             provider: "github"
-        })
+        });
+        toast.success("Sign In Successfull with github");
+
     };
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -161,9 +165,11 @@ const page = () => {
             </div>
 
             {/* Footer */}
-            <p className="text-center text-[9px] text-gray-400 mt-5">
-                ← হোম পেজে ফিরে যান
-            </p>
+            <Link href={"/"}>
+                <p className="text-center text-[9px] text-gray-400 mt-5">
+                    ← হোম পেজে ফিরে যান
+                </p>
+            </Link>
 
         </main>
     );
