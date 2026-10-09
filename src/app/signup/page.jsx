@@ -121,7 +121,7 @@ const SignupPage = () => {
                                     id="password"
                                     name="password"
                                     type="password"
-                                    placeholder="আপনার পাসওয়ার্ড"
+                                    placeholder="আপনার পাসওয়ার্ড min 8 word"
                                     required
                                     className="input input-bordered input-sm w-full text-xs"
                                 />

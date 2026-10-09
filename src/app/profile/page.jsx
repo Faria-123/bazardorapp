@@ -61,7 +61,7 @@ const Page = () => {
         const dataa = Object.fromEntries(formData.entries());
         console.log(dataa);
         const { data, error } = await updateUser({
-            name: dataa?.name, // The username to update.
+            name: dataa?.name,
         });
         if (data) {
             toast.success("Successfully Update");
@@ -99,7 +99,7 @@ const Page = () => {
         <div className="min-h-screen bg-gray-100 px-4 py-8">
             <div className="mx-auto max-w-3xl">
 
-                {/* Profile Heading */}
+
                 <div className="mb-6">
                     <h1 className="text-2xl font-bold text-gray-800">
                         আমার প্রোফাইল
@@ -109,7 +109,7 @@ const Page = () => {
                     </p>
                 </div>
 
-                {/* User Information Card */}
+
                 <div className="mb-6 flex flex-col items-center justify-between gap-4 rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:flex-row">
                     <div className="flex items-center gap-4">
                         <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-green-600 bg-green-100 text-2xl font-bold text-green-700">
@@ -134,7 +134,7 @@ const Page = () => {
                     </button>
                 </div>
 
-                {/* Profile Form */}
+
                 <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
                     <h3 className="mb-6 text-lg font-bold text-gray-800">
                         তথ্য
@@ -142,7 +142,7 @@ const Page = () => {
 
                     <form onSubmit={handleUpdate} className="space-y-3">
 
-                        {/* Email */}
+
                         <div>
                             <label
                                 htmlFor="name"

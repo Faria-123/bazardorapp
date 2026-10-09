@@ -2,9 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 const Banner = () => {
-    // const date = new Date().toLocaleString("bn-BD", {
-    //     dateStyle: 'full'
-    // })
+
 
     const [date, setDate] = useState("");
 

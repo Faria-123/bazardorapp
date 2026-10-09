@@ -4,7 +4,7 @@ import { getProductBySlug } from "@/lib/products";
 export const instant = false;
 
 const ProductDetails = async ({ params }) => {
-    // await connection();
+
 
     const { slug } = await params;
 
@@ -24,7 +24,7 @@ const ProductDetails = async ({ params }) => {
         );
     }
 
-    // Calculate min, max and average from all markets
+
     const allMinPrices = product.markets.map((item) => item.min);
     const allMaxPrices = product.markets.map((item) => item.max);
 
@@ -44,7 +44,7 @@ const ProductDetails = async ({ params }) => {
 
             <div className="max-w-6xl mx-auto">
 
-                {/* Breadcrumb */}
+
                 <div className="text-[11px] text-base-content/50 mb-4">
                     হোম
                     <span className="mx-2">›</span>
@@ -56,7 +56,7 @@ const ProductDetails = async ({ params }) => {
                 </div>
 
 
-                {/* ================= PRODUCT SUMMARY ================= */}
+
                 <section className="bg-base-100 border border-base-200 rounded-xl p-4 md:p-5 shadow-sm">
 
                     <div className="flex flex-col sm:flex-row justify-between gap-5">
@@ -95,7 +95,7 @@ const ProductDetails = async ({ params }) => {
                         </div>
 
 
-                        {/* Today's Price */}
+
                         <div className="bg-[#f3f6f3] rounded-xl px-5 py-3 min-w-[130px]">
 
                             <p className="text-[9px] text-base-content/50">
@@ -126,7 +126,7 @@ const ProductDetails = async ({ params }) => {
                 </section>
 
 
-                {/* ================= PRICE SUMMARY ================= */}
+
                 <section className="bg-base-100 border border-base-200 rounded-xl p-4 mt-4 shadow-sm">
 
                     <h2 className="text-sm font-semibold mb-3">
