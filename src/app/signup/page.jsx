@@ -1,24 +1,39 @@
 "use client";
 
-import { signUp } from "@/lib/auth-client";
+import { signIn, signUp } from "@/lib/auth-client";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { toast } from "react-toastify";
 
 const SignupPage = () => {
+    const handleGoogle = async () => {
+        const data = await signIn.social({
+            provider: "google",
+        });
+    }
+    const handleGit = async () => {
+        const data = await signIn.social({
+            provider: "github"
+        })
+    }
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
 
-        const dataa = Object.fromEntries(formData);
+        const dataa = Object.fromEntries(formData.entries());
 
-        console.log(data);
+        console.log(dataa);
         const { data, error } = await signUp.email({
             ...dataa
         });
         if (data) {
-
+            toast.success("সাইন আপ সফল হয়েছে! অনুগ্রহ করে লগইন করুন।");
+            redirect("/signin");
         }
-
+        if (error) {
+            toast.error("সাইন আপ ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।");
+        }
     };
 
     return (
@@ -156,6 +171,7 @@ const SignupPage = () => {
                             <button
                                 type="button"
                                 className="btn btn-outline btn-sm text-[9px] font-normal"
+                                onClick={handleGoogle}
                             >
                                 <span className="font-bold">
                                     G
@@ -168,6 +184,7 @@ const SignupPage = () => {
                             <button
                                 type="button"
                                 className="btn btn-outline btn-sm text-[9px] font-normal"
+                                onClick={handleGit}
                             >
                                 <span className="font-bold">
                                     ●
@@ -185,7 +202,7 @@ const SignupPage = () => {
                             অ্যাকাউন্ট আছে?
 
                             <Link
-                                href="/login"
+                                href="/signin"
                                 className="text-[#008f45] font-medium hover:underline ml-1"
                             >
                                 লগইন করুন

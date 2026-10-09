@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Marqeue from "@/components/Marqeue";
 import { Suspense } from "react";
 import Footer from "@/components/Footer";
+import { ToastContainer } from "react-toastify";
 
 const HindSiliguri = Hind_Siliguri({
 
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
         <main>
           {children}
         </main>
+        <ToastContainer />
         <Footer></Footer>
 
       </body>
